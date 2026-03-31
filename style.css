@@ -1,122 +1,102 @@
-/* ==========================
-   Cleaned modern style.css
-   - збережено актуальні змінні, layout та presentation
-   - видалено дубльовані/застарілі записі
-   ========================== */
-
-/* Основні змінні */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #e74c3c;
-    --accent-color: #3498db;
-    --text-color: #2c3e50;
-    --background-color: #ecf0f1;
-    --card-background: #ffffff;
-    --box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    --gradient-primary: linear-gradient(135deg, #2c3e50, #3498db);
-    --gradient-secondary: linear-gradient(135deg, #e74c3c, #f39c12);
+  --bg: #0f1720;
+  --card: #0f2430;
+  --accent: #2d9cdb;
+  --muted: #9fb3c8;
+  --text: #e6f6ff;
 }
 
-/* Шрифт */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+* {
+  box-sizing: border-box;
+  font-family: Inter, Segoe UI, Roboto, Arial, Helvetica, sans-serif;
+}
 
-/* Базові стилі */
-* { box-sizing: border-box; }
-html, body { height: 100%; }
+/* Оновлений фон з картинкою NexCraft та легким затемненням */
 body {
-    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Arial;
-    margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+  margin: 0;
+  background: linear-gradient(rgba(6, 18, 26, 0.6), rgba(7, 25, 34, 0.8)), url('img/NexCraft_fon.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-/* --- Анімації --- */
-@keyframes fadeIn { from { opacity: 0; transform: translateY(12px);} to { opacity:1; transform: none; }}
-@keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)} }
+.app {
+  background: rgba(15, 23, 32, 0.8);
+  border-radius: 12px;
+  width: 900px;
+  max-width: 95%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
 
-/* --- Layout центрування --- */
-main, header, footer { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
-main { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+/* Решта твоїх стилів */
+.header { background: linear-gradient(90deg, var(--accent), #176b9f); padding: 18px; }
+.header h1 { margin: 0; font-size: 20px; }
+.main { display: flex; padding: 28px; gap: 20px; }
+.left { width: 420px; }
+.right { flex: 1; }
+.card { background: rgba(255, 255, 255, 0.03); padding: 16px; border-radius: 8px; margin-bottom: 16px; }
+.card-title { font-weight: 600; margin-bottom: 8px; }
+.auth label { display: block; color: var(--muted); font-size: 13px; margin-top: 10px; }
+.auth input { width: 100%; padding: 10px; margin-top: 6px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .06); background: transparent; color: var(--text); }
+.btn { padding: 10px 14px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .06); background: transparent; color: var(--text); cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: transparent; color: #07202b; }
+.server-list { max-height: 380px; overflow: auto; }
+.server-item { display: flex; align-items: center; justify-content: space-between; padding: 8px; border-radius: 6px; margin-bottom: 8px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent); }
+.server-item label { flex: 1; margin-left: 8px; }
 
-/* Header */
-header {
-    background: var(--gradient-primary);
-    color: #fff;
-    padding: 18px 0;
+/* Модальне вікно */
+.modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(2, 6, 12, .6); }
+.modal-panel { background: #071b26; padding: 18px; border-radius: 8px; width: 360px; }
+.ram-presets { display: flex; gap: 8px; margin: 8px 0 12px; }
+.ram-option { flex: 1; padding: 8px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .05); background: transparent; color: var(--text); cursor: pointer; }
+.modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px; }
+
+@media(max-width: 1280px) { 
+  .app { transform: scale(.9); } 
+}
+
+/* Екран завантаження */
+.loading-screen {
+    display: none; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    box-shadow: var(--box-shadow);
-}
-header h1 { margin: 0; font-size: 2.1rem; font-weight: 700; letter-spacing: -0.02em; animation: fadeIn .9s ease; }
-
-/* Nav */
-nav { margin-top: 10px; text-align: center; }
-nav ul { list-style: none; padding: 0; margin: 0; display: inline-flex; gap: 12px; flex-wrap: wrap; }
-nav a { color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 6px; font-weight: 600; display: inline-block; }
-nav a:hover { background: rgba(255,255,255,0.08); }
-
-/* Dropdown */
-.dropdown { position: relative; }
-.dropdown-content { display: none; position: absolute; top: calc(100% + 8px); left: 0; background: #fff; color: #222; border-radius: 6px; box-shadow: 0 8px 20px rgba(0,0,0,0.12); min-width: 200px; padding: 6px 0; z-index: 30; }
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a { display:block; padding: 8px 12px; color: #222; text-decoration: none; }
-.dropdown-content a:hover { background: var(--background-color); }
-
-/* Welcome / Intro */
-.welcome-section { background: var(--card-background); border-radius: 12px; padding: 2.2rem; box-shadow: var(--box-shadow); margin-top: 1.5rem; }
-.welcome-content { text-align: center; }
-.welcome-content h2 { color: var(--primary-color); font-size: 2rem; margin: 0 0 0.6rem; }
-.welcome-content p { color: #485062; margin: 0 0 1rem; }
-.features-list { list-style:none; padding:0; margin:1rem auto 0; max-width: 820px; }
-.features-list li { background: #fafafa; border-radius: 8px; padding: 12px 14px; margin: 8px 0; }
-
-/* Sections and cards */
-section { background: var(--card-background); border-radius: 12px; padding: 1.2rem; box-shadow: var(--box-shadow); margin: 1.25rem 0; animation: fadeIn .7s ease; }
-.card { padding: 1rem; border-radius: 10px; background: var(--card-background); box-shadow: 0 8px 22px rgba(0,0,0,0.04); }
-
-/* Practice grid */
-.practice-section { padding: 0.6rem 0; }
-.practice-grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 0.8rem; }
-.practice-card { padding: 1rem; border-radius: 10px; transition: transform .22s ease, box-shadow .22s ease; }
-.practice-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-
-.practice-card h3 { margin: 0 0 0.6rem; color: var(--primary-color); }
-.practice-card ul { list-style: none; padding: 0; margin: 0.6rem 0; }
-.practice-card li { padding: 6px 0; padding-left: 20px; position: relative; }
-.practice-card li:before { content: '✓'; position: absolute; left: 0; color: var(--secondary-color); }
-.practice-button { display:inline-block; padding:10px 14px; border-radius:8px; background:var(--gradient-primary); color:#fff; text-decoration:none; font-weight:700; }
-
-/* Tables, images */
-table { width:100%; border-collapse: collapse; margin-top: 8px; }
-th, td { border: 1px solid #e6e9ee; padding: 8px; text-align: left; }
-th { background: var(--primary-color); color: #fff; }
-img { max-width:100%; height:auto; display:block; border-radius:6px; }
-
-/* Presentation mode styles (kept minimal and consistent) */
-.pres-overlay { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(16,18,25,0.92); z-index: 9999; }
-.pres-overlay.active { display:flex; }
-.pres-slide { width: 90vw; max-width: 1100px; height: 78vh; background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95)); color: var(--text-color); border-radius: 10px; padding: 2rem; overflow:auto; box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
-.pres-controls { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display:flex; gap:10px; }
-.pres-btn, .pres-control-btn { background: var(--primary-color); color:#fff; border:none; padding:8px 12px; border-radius:8px; cursor:pointer; font-weight:700; }
-.pres-control-btn.secondary { background: var(--secondary-color); }
-.pres-dots { position:absolute; top:18px; right:28px; display:flex; gap:8px; }
-.pres-dot { width:10px; height:10px; border-radius:50%; background: rgba(0,0,0,0.18); }
-.pres-dot.active { background: var(--secondary-color); }
-.pres-slide h1, .pres-slide h2 { color: var(--primary-color); }
-
-/* Responsive tweaks */
-@media (max-width: 768px) {
-    header h1 { font-size: 1.5rem; }
-    .pres-slide { height: 72vh; padding: 1rem; }
+    position: absolute;
+    inset: 0;
+    z-index: 100;
 }
 
-@media (max-width: 420px) {
-    nav ul { display: flex; gap: 8px; }
-    .welcome-content h2 { font-size: 1.25rem; }
+.loading-title {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    color: var(--accent); 
 }
 
-/* End of cleaned CSS */
+.loading-text {
+    font-size: 18px;
+    color: var(--text);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.loader-spinner {
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* --- ОСЬ ЦЕЙ РЯДОК ДОДАНО ДЛЯ ПРАВИЛЬНОГО ПРИХОВУВАННЯ ЕЛЕМЕНТІВ --- */
+.hidden { display: none !important; }

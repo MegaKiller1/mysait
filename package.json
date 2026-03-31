@@ -1,0 +1,37 @@
+{
+  "name": "nexcraft-launcher",
+  "productName": "NexCraft",
+  "version": "1.0.0",
+  "author": "Sasha", 
+  "description": "NexCraft Minecraft Launcher",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.18.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.3.0",
+    "@electron-forge/maker-squirrel": "^7.3.0",
+    "electron": "^29.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "img/NexCraft_icon"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "nexcraft",
+            "setupIcon": "img/NexCraft_icon.ico"
+          }
+        }
+      ]
+    }
+  }
+}

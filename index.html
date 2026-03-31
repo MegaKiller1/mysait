@@ -1,99 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Інформатика - Шлях до Майбутнього</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280, initial-scale=1">
+  <title>NexCraft</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Інформатика - Шлях до Майбутнього 🚀</h1>
-            <p class="header-subtitle">Навчайся, Досліджуй, Створюй</p>
-        </div>
-        <nav>
-            <ul>
-                <li class="dropdown">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-graduation-cap"></i>
-                        Класи
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="class5.html">5 клас</a>
-                        <a href="class6.html">6 клас</a>
-                        <a href="class7.html">7 клас</a>
-                        <a href="class8.html">8 клас</a>
-                        <a href="class9.html">9 клас</a>
-                     </div>
-                </li>
-
-                <li class="dropdown">
-                    <a href="#">Про вчителя</a>
-                    <div class="dropdown-content">
-                        <a href="materials.html">Методичні матеріали</a>
-                        <a href="teacher.html">Про вчителя</a>
-                        
-                    </div>
-                </li>
-
-                <li><a href="projects.html">Проекти та завдання</a></li>
-                <li><a href="praktichni-zavdannya.html"><i class="fas fa-laptop-code"></i> Практичні роботи</a></li>
-                <li><a href="praktika.html"><i class="fas fa-file-alt"></i> Практика</a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScFlhpT63sk285r_HZB8qhh1lwgATarpQgXss_cWccmclMy1g/viewform?usp=header" target="_blank">Форма зворотнього зв’язку</a></li>
-                <li><a href="extracurricular.html">Позаурочна робота</a></li>
-                
-                <li class="dropdown">
-                    <a href="#">Інформація</a>
-                    <div class="dropdown-content">
-                        <a href="school.html">Інформація про школу</a>
-                        <a href="safety.html">Техніка безпеки</a>
-                        <a href="sources.html">Джерела інформації</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+  <div class="app" id="app" style="width:1280px;height:720px;">
+    <header class="header">
+      <h1>NexCraft</h1>
     </header>
 
-    <main class="welcome-section">
-        <div class="welcome-content">
-            <h2>Ласкаво просимо до світу інформатики! 🚀</h2>
-            <p>Вітаю вас на освітньому порталі, де інформатика стає захоплюючою пригодою! Тут ви знайдете:</p>
-            <ul class="features-list">
-                <li>🎯 Інтерактивні уроки та практичні завдання</li>
-                <li>💡 Цікаві проекти та творчі роботи</li>
-                <li>🎮 Навчальні ігри та вправи</li>
-                <li>📚 Корисні матеріали для самостійного вивчення</li>
-                <li>🏆 Можливості для розвитку та досягнення успіху</li>
-            </ul>
-            <p class="motivation-text">Разом ми перетворимо складне в просте, а навчання - у захоплюючу подорож у світ технологій!</p>
+    <main class="main">
+      <div class="left">
+        <div class="card auth">
+          <label>Логін</label>
+          <input id="username" type="text" placeholder="Введіть логін">
+          <label>Пароль</label>
+          <input id="password" type="password" placeholder="Введіть пароль">
         </div>
+
+        <div class="card ram">
+          <label>ОЗУ</label>
+          <button id="ramBtn" class="btn">Виділити ОЗУ: <span id="ramLabel">4</span> GB</button>
+        </div>
+
+        <div class="card actions">
+          <button id="playBtn" class="btn primary">Грати</button>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="card servers">
+          <div class="card-title">Вибір сервера</div>
+          <div id="serverList" class="server-list">Завантаження серверів...</div>
+          <div class="server-actions">
+            <button id="refreshServers" class="btn">Оновити</button>
+          </div>
+        </div>
+      </div>
     </main>
-    
-    <header>
-        <h1>Цікаві факти про інформатику</h1>
-    </header>
-    <section class="facts">
-        <center><h2>Чи знали ви, що...</h2></center>
-        <ul>
-            <li>Перший комп’ютер ENIAC займав площу понад 160 м² і важив 27 тонн.</li>
-            <li>Перша комп’ютерна миша була зроблена з дерева в 1964 році.</li>
-            <li>Перший вірус для ПК називався "Brain" і був створений у 1986 році.</li>
-            <li>Перший веб-сайт у світі було створено в 1991 році і він досі працює (<a href="http://info.cern.ch" target="_blank">info.cern.ch</a>).</li>
-            <li>Слово "баг" (помилка в коді) вперше використали після того, як у комп'ютері знайшли справжню міль.</li>
-        </ul>
-    </section>
+  </div>
 
-    <footer>
-    <center>
-        <p> 2025 рік</p>
-    </center>
-    </footer>
+  <div id="ramModal" class="modal hidden">
+    <div class="modal-panel">
+      <h3>Виділення ОЗУ</h3>
+      <div class="ram-presets">
+        <button class="ram-option" data-ram="4">4 GB</button>
+        <button class="ram-option" data-ram="8">8 GB</button>
+        <button class="ram-option" data-ram="12">12 GB</button>
+        <button id="ramCustomBtn" class="ram-option">Власне</button>
+      </div>
+      <div id="customRam" class="hidden" style="margin-top: 15px;">
+        <label>Введіть ГБ </label>
+        <input id="customRamInput" type="number" min="1" max="32" value="4">
+      </div>
+      <div class="modal-actions" style="margin-top: 15px;">
+        <button id="ramOk" class="btn primary">ОК</button>
+        <button id="ramCancel" class="btn">Скасувати</button>
+      </div>
+    </div>
+  </div>
 
-    
+  <div class="loading-screen hidden" id="loadingScreen">
+    <h1 class="loading-title">NexCraft</h1>
+    <p class="loading-text" id="loadingStatus">Підготовка до запуску гри...</p>
+    <div class="loader-spinner"></div>
+  </div>
 
+  <script src="app.js"></script>
 </body>
 </html>
-
